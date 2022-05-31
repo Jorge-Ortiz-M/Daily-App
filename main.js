@@ -29,7 +29,7 @@ app.get("/", (req, res) => {    // Route of the main application.
 
 // ---------------------------------------
 // ------------ PORT settings ------------
-app.listen(process.env.PORT || port, () => {
+app.listen(process.env.PORT || port, () => {    // It listen in the ports spcified at the beginnig and also, in the port set by the production enviroment.
     console.log(`Listening on port ${port}`);
 });
 // ---------------------------------------
