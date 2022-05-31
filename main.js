@@ -30,15 +30,15 @@ app.get("/", (req, res) => {    // Route of the main application.
     res.render('pages/index', {current_date: date.getDate(), notes: notesList});
 });
 
-app.get("/about", (req, res) => {
+app.get("/about", (req, res) => {   // About page from the application.
     res.render('pages/about', {current_date: date.getDate()});
 });
 
-app.get("/new", (req, res) => {
+app.get("/new", (req, res) => {     // New page to create a new object.
     res.render('pages/new', {current_date: date.getDate()});
 });
 
-app.get('/notes/:noteID', (req, res) => {
+app.get('/notes/:noteID', (req, res) => {       // Show page where render a note base on the ID.
     const id = req.params.noteID;
     const note = notesList[id];
     res.render('pages/show', {current_date: date.getDate(), note: note});
@@ -56,4 +56,3 @@ app.listen(process.env.PORT || port, () => {    // It listen in the ports spcifi
     console.log(`Listening on port ${port}`);
 });
 // ---------------------------------------
-
