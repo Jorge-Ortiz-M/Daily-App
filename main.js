@@ -14,12 +14,6 @@ const port = 9000;      // The port where is going to listen.
 const app = express();  // Adding express to app in order to syncronisc each webpage.
 const notesList = [];
 // ---------------------------------------
-// ---------- Adding objects. -----------
-let noteTest1 = {title: "My morning routine", description: "This is just a short description.", date: date.getDate()};
-let noteTest2 = {title: "Weekend routine", description: "This is just another short description.", date: date.getDate()};
-notesList.push(noteTest1);
-notesList.push(noteTest2);
-// ---------------------------------------
 // -------- Modules configuration. ---------
 app.use(bodyParser.urlencoded({extended: true}));   // Configuration in order to get data from the forms.
 app.use(express.static("public"));  // Configuration in order to call local files inside of the public folder.

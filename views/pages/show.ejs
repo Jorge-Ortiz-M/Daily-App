@@ -7,11 +7,11 @@
         <%- include('../partials/header', {date: current_date}); -%>
         <main>
             <h1>Show Page</h1>
-            <p>
+            <p class="note-long">
                 <strong><%= note.title %></strong> <br>
                 <small>
                     Date: <strong><%= note.date %></strong><br>
-                </small>
+                </small> <br>
                 <%= note.description %> <br>
                 <a href="/">Back</a>
             </p>

@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(253, 238, 194);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav, footer{
+    padding: 10px;
+    background-color: rgb(65, 50, 5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav p{
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+nav ul{
+    margin-top: auto;
+    margin-bottom: auto;
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-flex;
+    margin: auto 20px auto auto;
+    color: #ffffff;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer{
+    margin-top: 50px;
+}
+
+footer p{
+    margin: auto auto auto auto;
+    color: #ffffff;
+}
+
+h1{
+    padding: 50px;
+    text-align: center;
+}
+
+.view-description{
+    text-align: center;
+}
+
+.form-section form{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.form-section form label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+.form-section form input, .form-section form textarea{
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.form-section form div{
+    display: flex;
+    justify-content: center;
+}
+
+form div button{
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: rgb(65, 50, 5);
+}
+
+.note-short, .note-long{
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 3px #a19e9e;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.note-short{
+    width: 200px;
+}
+
+.note-short a, .note-long a{
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #5eb12e;
+}
