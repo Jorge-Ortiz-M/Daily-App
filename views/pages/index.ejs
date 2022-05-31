@@ -7,6 +7,11 @@
         <%- include('../partials/header', {date: current_date}); -%>
         <main>
             <h1>Daily Project</h1>
+            <div>
+                <% notes.map((note, index) => { %>
+                    <%- include('../partials/note', {note: note, index: index}); -%>
+                <% }); %>
+            </div>
         </main>
         <%- include('../partials/footer', {date: current_date}); -%>
     </body>

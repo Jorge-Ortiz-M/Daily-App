@@ -9,9 +9,16 @@ const { getDate } = require("./javascript/date");
 // --------- Import Local module ----------
 const date = require(__dirname + '/javascript/date');
 // ---------------------------------------
-// ----------- Global Variables -----------
+// ----------- Local Variables -----------
 const port = 9000;      // The port where is going to listen.
 const app = express();  // Adding express to app in order to syncronisc each webpage.
+const notesList = [];
+// ---------------------------------------
+// ---------- Adding objects. -----------
+let noteTest1 = {title: "My morning routine", description: "This is just a short description.", date: date.getDate()};
+let noteTest2 = {title: "Weekend routine", description: "This is just another short description.", date: date.getDate()};
+notesList.push(noteTest1);
+notesList.push(noteTest2);
 // ---------------------------------------
 // -------- Modules configuration. ---------
 app.use(bodyParser.urlencoded({extended: true}));   // Configuration in order to get data from the forms.
@@ -20,7 +27,7 @@ app.set('view engine', 'ejs');  // Configuration in order to use EJS in our web 
 // ---------------------------------------
 // ------------ GET request --------------
 app.get("/", (req, res) => {    // Route of the main application.
-    res.render('pages/index', {current_date: date.getDate()});
+    res.render('pages/index', {current_date: date.getDate(), notes: notesList});
 });
 
 app.get("/about", (req, res) => {
@@ -30,11 +37,19 @@ app.get("/about", (req, res) => {
 app.get("/new", (req, res) => {
     res.render('pages/new', {current_date: date.getDate()});
 });
+
+app.get('/notes/:noteID', (req, res) => {
+    const id = req.params.noteID;
+    const note = notesList[id];
+    res.render('pages/show', {current_date: date.getDate(), note: note});
+  })
 // ---------------------------------------
 // ------------ POST request -------------
-
-
-
+app.post("/new", (req, res) => {
+    const note = {title: req.body.title, description: req.body.description, date: date.getDate()};
+    notesList.push(note);
+    res.redirect("/");
+});
 // ---------------------------------------
 // ------------ PORT settings ------------
 app.listen(process.env.PORT || port, () => {    // It listen in the ports spcified at the beginnig and also, in the port set by the production enviroment.

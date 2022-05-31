@@ -7,6 +7,16 @@
         <%- include('../partials/header', {date: current_date}); -%>
         <main>
             <h1>New Note</h1>
+            <p>
+                In this section you can add your notes by typping all you want in the form below.
+            </p>
+            <div>
+                <form action="/new" method="post">
+                    <input type="text" name="title" placeholder="My morning routine." autocomplete="off">
+                    <textarea name="description" cols="30" rows="10" placeholder="Write anything you want..."></textarea>
+                    <button type="submit">Create Note.</button>
+                </form>
+            </div>
         </main>
         <%- include('../partials/footer', {date: current_date}); -%>
     </body>

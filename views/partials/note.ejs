@@ -1,0 +1,9 @@
+<p>
+    <strong><%= note.title %></strong> <br>
+    <small>
+        ID: <strong><%= index %></strong><br>
+        Date: <strong><%= note.date %></strong><br>
+    </small>
+    <%= note.description.substr(0, 100) %>... <br>
+    <a href= '/notes/<%= index %> '>See more</a>
+</p>

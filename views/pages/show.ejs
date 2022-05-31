@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head', {title: "New"}); %>
+    </head>
+    <body>
+        <%- include('../partials/header', {date: current_date}); -%>
+        <main>
+            <h1>Show Page</h1>
+            <p>
+                <strong><%= note.title %></strong> <br>
+                <small>
+                    Date: <strong><%= note.date %></strong><br>
+                </small>
+                <%= note.description %> <br>
+                <a href="/">Back</a>
+            </p>
+        </main>
+        <%- include('../partials/footer', {date: current_date}); -%>
+    </body>
+</html>
