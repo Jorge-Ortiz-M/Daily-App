@@ -4,6 +4,10 @@
 const express = require("express"); // Require the EXPRESS module.
 const bodyParser = require("body-parser");  // Require the Body Parser module.
 const ejs = require("ejs");     // Require the EJS module. 
+const { getDate } = require("./javascript/date");
+// ---------------------------------------
+// --------- Import Local module ----------
+const date = require(__dirname + '/javascript/date');
 // ---------------------------------------
 // ----------- Global Variables -----------
 const port = 9000;      // The port where is going to listen.
@@ -15,8 +19,8 @@ app.use(express.static("public"));  // Configuration in order to call local file
 app.set('view engine', 'ejs');  // Configuration in order to use EJS in our web application.
 // ---------------------------------------
 // ------------ GET request --------------
-app.get("/", (req, res) => {    // Route of main application.
-    res.render('pages/index');
+app.get("/", (req, res) => {    // Route of the main application.
+    res.render('pages/index', {current_date: date.getDate()});
 });
 // ---------------------------------------
 // ------------ POST request -------------
