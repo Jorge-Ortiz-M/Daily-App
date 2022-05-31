@@ -25,7 +25,7 @@ app.get("/", (req, res) => {    // Route of main application.
 
 // ---------------------------------------
 // ------------ PORT settings ------------
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Listening on port ${port}`);
 });
 // ---------------------------------------
