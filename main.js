@@ -22,6 +22,14 @@ app.set('view engine', 'ejs');  // Configuration in order to use EJS in our web 
 app.get("/", (req, res) => {    // Route of the main application.
     res.render('pages/index', {current_date: date.getDate()});
 });
+
+app.get("/about", (req, res) => {
+    res.render('pages/about', {current_date: date.getDate()});
+});
+
+app.get("/new", (req, res) => {
+    res.render('pages/new', {current_date: date.getDate()});
+});
 // ---------------------------------------
 // ------------ POST request -------------
 
