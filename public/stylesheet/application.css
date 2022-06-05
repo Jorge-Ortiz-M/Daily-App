@@ -104,6 +104,10 @@ form div button{
     padding: 20px;
 }
 
+.note-see-more{
+    width: 24%;
+}
+
 .note-long{
     padding: 50px;
 }
