@@ -1,9 +1,11 @@
 <p class="note-short">
     <strong><%= note.title %></strong> <br>
     <small>
-        ID: <strong><%= index %></strong><br>
-        Date: <strong><%= note.date %></strong><br>
+        ID: <strong><%= note._id %></strong> <br>
+    </small> <br>
+    <%= note.description.substr(0, 70) %>... <br> <br>
+    <small>
+        Date: <strong><%= note.date %></strong>
     </small>
-    <%= note.description.substr(0, 100) %>... <br>
-    <a href= '/notes/<%= index %> '>See more</a>
+    <a href= '/notes/<%= note._id %>'>See more</a>
 </p>

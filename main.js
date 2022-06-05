@@ -67,13 +67,23 @@ app.get("/new", (req, res) => {     // New page to create a new object.
 
 app.get('/notes/:noteID', (req, res) => {       // Show page where render a note base on the ID.
     const id = req.params.noteID;
-    const note = notesList[id];
-    res.render('pages/show', {current_date: date.getDate(), note: note});
+    Note.findOne({_id: id}, function(err, noteFounded){
+        res.render('pages/show', {current_date: date.getDate(), note: noteFounded});
+    });
   });
 // ---------------------------------------
 // ------------ POST request -------------
 app.post("/new", (req, res) => {
-    const note = {title: req.body.title, description: req.body.description, date: date.getDate()};
+    const note = new Note({title: req.body.title, description: req.body.description, date: date.getDate()});
+    note.save();
+    res.redirect("/");
+});
+
+app.post("/delete", (req, res) => {
+    const id = req.body.button;
+    Note.deleteOne({_id: id}, function(err, noteFounded){
+        err ? console.log(err) : null;
+    });
     res.redirect("/");
 });
 // ---------------------------------------

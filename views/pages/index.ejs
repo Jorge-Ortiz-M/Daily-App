@@ -9,7 +9,7 @@
             <h1>Daily Project</h1>
             <div>
                 <% notes.map((note, index) => { %>
-                    <%- include('../partials/note', {note: note, index: index}); -%>
+                    <%- include('../partials/note', {note: note}); -%>
                 <% }); %>
             </div>
         </main>

@@ -96,12 +96,16 @@ form div button{
     display: inline-flex;
     flex-direction: column;
     margin: 20px;
-    padding: 20px;
     border-radius: 10px;
 }
 
 .note-short{
-    width: 200px;
+    width: 300px;
+    padding: 20px;
+}
+
+.note-long{
+    padding: 50px;
 }
 
 .note-short a, .note-long a{
@@ -109,4 +113,38 @@ form div button{
     text-decoration: none;
     font-weight: 700;
     color: #5eb12e;
+    background-color: #d8e8cf;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.note-links{
+    display: flex;
+    margin-top: 20px;
+}
+
+.link-back, .link-delete{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+}
+
+.link-delete button{
+    text-decoration: none;
+    font-weight: 700;
+    color: #b12e2e;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #e6cfcf;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+}
+
+.about-section{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0px 50px 0px 50px;
+    text-align: justify;
+    line-height: 1.5;
 }

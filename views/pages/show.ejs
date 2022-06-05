@@ -7,14 +7,21 @@
         <%- include('../partials/header', {date: current_date}); -%>
         <main>
             <h1>Show Page</h1>
-            <p class="note-long">
-                <strong><%= note.title %></strong> <br>
+            <div class="note-long">
+                <h3><%= note.title %></h3> <br>
                 <small>
                     Date: <strong><%= note.date %></strong><br>
                 </small> <br>
-                <%= note.description %> <br>
-                <a href="/">Back</a>
-            </p>
+                <%= note.description %>
+                <div class="note-links">
+                    <div class="link-back">
+                        <a href="/">Back</a>
+                    </div>
+                    <form action="/delete" method="post" class="link-delete">
+                        <button type="submit" name="button" value="<%= note._id %>">Delete</button>
+                    </form>
+                </div>
+            </div>
         </main>
         <%- include('../partials/footer', {date: current_date}); -%>
     </body>
