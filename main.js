@@ -9,7 +9,7 @@ const mongoose = require("mongoose");   // Connecting to our local mongo databas
 const _ = require('lodash');    // Adding the Lodash module.
 // ---------------------------------------
 // ------- Creating and connecing to the DB. ------------
-mongoose.connect("mongodb://localhost:27017/DailyDB", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGOOSE_DB_LINK, { useNewUrlParser: true });
 // ---------------------------------------
 // --------- Import Local module ----------
 const date = require(__dirname + '/javascript/date');
